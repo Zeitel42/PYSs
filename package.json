@@ -34,5 +34,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zeitel42/PlaceYourSets-prod.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zeitel42/PlaceYourSets-prod/issues"
+  },
+  "homepage": "https://github.com/Zeitel42/PlaceYourSets-prod"
 }
