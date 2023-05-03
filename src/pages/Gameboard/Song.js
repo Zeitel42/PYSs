@@ -1,7 +1,11 @@
 // When user chooses a song it is added to the setlist
+import React, { useState, useEffect } from "react";
 import SongList from "./SongList";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-const SetSong = () => {
+const SetSong = ({ userChoice }) => {
   const [song, setSong] = useState("Choose a song");
 
   const getSong = (value) => {
@@ -16,7 +20,7 @@ const SetSong = () => {
             <p>{song}</p>
           </Col>
           <Col>
-            <SongList callback={getSong} />
+            <SongList userChoice={getSong} />
           </Col>
         </Row>
       </Container>

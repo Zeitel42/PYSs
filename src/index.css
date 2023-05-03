@@ -1,3 +1,22 @@
 body {
-    
+    text-align: center;
 }
+/* .modal-body{
+    width: 80%;
+    margin: auto;
+    background-color: gray;
+}
+.list-body {
+    list-style:none;
+    display: inline-block;
+    background-color: yellow;
+} */
+/* li {
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 2px;
+    margin: 2px;
+    color: white;
+    text-shadow: 1px 2px 3px black;
+} */
+

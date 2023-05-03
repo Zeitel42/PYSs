@@ -1,13 +1,17 @@
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Gameboard from "./pages/Gameboard/Gameboard";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <h2>This will be the gameboard area</h2>
-      <Footer />
+      {/* <Header /> */}
+      <Gameboard />
+
+      {/* <Footer /> */}
     </div>
   );
 }
