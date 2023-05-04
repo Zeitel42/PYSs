@@ -11,50 +11,54 @@ import Col from "react-bootstrap/Col";
 
 let id = 0;
 const SongList = ({ items, userChoice, setUserChoice }) => {
-  console.log(items);
-  // modal functionality
-
-  const [show, setShow] = useState(false);
-  const handleShow = () => {
-    setShow(true);
-  };
-  const handleClose = () => {
-    setShow(false);
-  };
-  //
-  //mapping songs and getting user selection
+  const [selected, setSelected] = useState("Choose a song");
   useEffect(() => {
-    // console.log(userChoice);
+    userChoice = selected;
+    // console.log(choice);
   }, []);
   let songTitles = [];
   let unique_song = [];
 
-  items &&
-    items.map((item) => {
-      console.log(item);
-      //   for (let set of item.setlist.sets.set) {
-      //     for (let song of set.song) {
-      //       songTitles.push(song.name);
-      //     }
-      //   }
-      // console.log(songTitles);
+  items.map((item) => {
+    // console.log(item);
+    for (let set of item.sets.set) {
+      for (let song of set.song) {
+        songTitles.push(song.name);
+      }
+    }
+    // console.log("total songs", songTitles.length);
 
-      songTitles.forEach((title) => {
-        if (!unique_song.includes(title)) {
-          unique_song.push(title);
-        }
+    songTitles.forEach((title) => {
+      if (!unique_song.includes(title)) {
+        unique_song.push(title);
+      }
 
-        unique_song.sort();
-        //   console.log(unique_song);
-      });
+      unique_song.sort();
     });
+  });
+  console.log(unique_song.length, unique_song);
   return (
     <div>
-      {/* <Button onClick={handleShow}>
-        <BsPlusCircle />
-      </Button> */}
+      <select
+        onChange={(e) => {
+          setSelected(e.target.value);
+          console.log(selected, userChoice);
+        }}
+      >
+        {unique_song.map((item) => (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
 
-      <Modal className="modal-body" show={show} onHide={handleClose}>
+export default SongList;
+
+{
+  /* <Modal className="modal-body" show={show} onHide={handleClose}>
         <Modal.Body>
           <ListGroup as="ul" className="list-body">
             {unique_song.map((song) => (
@@ -82,9 +86,5 @@ const SongList = ({ items, userChoice, setUserChoice }) => {
             ))}
           </ListGroup>
         </Modal.Body>
-      </Modal>
-    </div>
-  );
-};
-
-export default SongList;
+      </Modal> */
+}
