@@ -18,7 +18,7 @@ const Gameboard = () => {
     const fetchSets = async () => {
       const response = await fetch(`${API_URL}setlists?p=${page}`);
       data = await response.json();
-      console.log(data.setlist);
+      //   console.log(data.setlist);
 
       if (data.setlist) {
         page++;
