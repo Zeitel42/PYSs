@@ -39,7 +39,7 @@ const SongListModal = ({
             overflowY: "auto",
           }}
         >
-          <ListGroup as="ol" className="list-body">
+          <ListGroup as="ul" className="list-body">
             {uniqueSong.map((song) => (
               <ListGroup.Item as="li" key={song}>
                 <Row>
