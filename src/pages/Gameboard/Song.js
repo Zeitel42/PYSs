@@ -1,26 +1,29 @@
 // When user chooses a song it is added to the setlist
 import React, { useState, useEffect } from "react";
-import SongList from "./SongList";
+import SongListModal from "./SongListModal";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Song = ({ userChoice }) => {
-  const [song, setSong] = useState("Choose a song");
+const Song = ({ userChoice, setUserChoice }) => {
+  // let userSongs = [];
+  let userSetOne = [];
+  // const setOneSongs = "";
 
-  const getSong = (value) => {
-    setSong(`${value}`);
-  };
+  const [userSong, setUserSong] = useState("");
+  userSetOne.push(userChoice);
 
+  console.log(userSetOne);
   return (
     <div>
       <Container>
         <Row>
           <Col>
-            <p>{song}</p>
-          </Col>
-          <Col>
-            <SongList />
+            <ul>
+              {userSetOne.map((song) => {
+                <li key={song}>{song}</li>;
+              })}
+            </ul>
           </Col>
         </Row>
       </Container>

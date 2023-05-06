@@ -2,6 +2,7 @@
 import SongList from "./SongList";
 // import SetOne from "./SetOne/SetOneIndex";
 import React, { useState, useEffect } from "react";
+import Song from "./Song";
 
 const Gameboard = () => {
   // variables
@@ -9,7 +10,7 @@ const Gameboard = () => {
   let data;
   // Hooks
   const [items, setItems] = useState([]);
-  const [userChoice, setUserChoice] = useState("");
+  const [userChoice, setUserChoice] = useState("Choose a song");
 
   useEffect(() => {
     let page = 1;
@@ -40,7 +41,7 @@ const Gameboard = () => {
       }
     })();
   }, []);
-
+  console.log(userChoice);
   return (
     <div className="Gameboard">
       <h1>Place Your Sets</h1>
@@ -49,6 +50,7 @@ const Gameboard = () => {
         userChoice={userChoice}
         setUserChoice={setUserChoice}
       />
+      <Song userChoice={userChoice} />
     </div>
   );
 };

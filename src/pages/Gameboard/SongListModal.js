@@ -13,6 +13,7 @@ const SongListModal = ({
   setIsOpen,
   handleClose,
   uniqueSong,
+  userChoice,
   setUserChoice,
 }) => {
   //   useEffect(() => {
@@ -21,6 +22,9 @@ const SongListModal = ({
   //   }, [value]);
 
   console.log(isOpen, uniqueSong.length);
+  //   const getSong = (value) => {
+  //     setUserChoice(`${value}`);
+  //   };
   return (
     <div>
       <Modal
@@ -46,8 +50,9 @@ const SongListModal = ({
                     <Button
                       onClick={() => {
                         {
-                          //   setUserChoice(song);
+                          setUserChoice(`${song}`);
                           setIsOpen(false);
+                          //   console.log(userChoice);
                         }
                       }}
                     >

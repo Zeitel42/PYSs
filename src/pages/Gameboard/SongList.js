@@ -4,9 +4,8 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { BsPlusCircle } from "react-icons/bs";
 import SongListModal from "./SongListModal";
-
 let id = 0;
-const SongList = ({ items, setUserChoice }) => {
+const SongList = ({ items, userChoice, setUserChoice }) => {
   const handleShow = () => {
     setIsOpen(true);
   };
@@ -29,7 +28,7 @@ const SongList = ({ items, setUserChoice }) => {
         songTitles.push(song.name);
       }
     }
-    // console.log("total songs", songTitles.length);
+    // console.log(songTitles);
 
     // forEach method to eliminate duplicates and sort alphabetically
     songTitles.forEach((title) => {
@@ -40,7 +39,7 @@ const SongList = ({ items, setUserChoice }) => {
       uniqueSong.sort();
     });
   });
-  console.log(uniqueSong.length);
+  console.log(uniqueSong.length, userChoice);
 
   return (
     <div>
@@ -52,6 +51,7 @@ const SongList = ({ items, setUserChoice }) => {
         setIsOpen={setIsOpen}
         handleClose={handleClose}
         uniqueSong={uniqueSong}
+        userChoice={userChoice}
         setUserChoice={setUserChoice}
       />
     </div>
@@ -60,6 +60,7 @@ const SongList = ({ items, setUserChoice }) => {
 
 export default SongList;
 
+//select dropdown if we want to use it instead
 {
   /* <select
         onChange={(e) => {
