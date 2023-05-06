@@ -13,10 +13,8 @@ const SongListModal = ({
   setIsOpen,
   handleClose,
   uniqueSong,
-  userChoice,
+  setUserChoice,
 }) => {
-  const [keyId, setKeyId] = useState(0);
-  //   const [selected, setSelected] = useState("Choose a song");
   //   useEffect(() => {
   //     // userChoice = selected;
   //     // console.log(choice);
@@ -48,7 +46,7 @@ const SongListModal = ({
                     <Button
                       onClick={() => {
                         {
-                          // setUserChoice(song);
+                          //   setUserChoice(song);
                           setIsOpen(false);
                         }
                       }}

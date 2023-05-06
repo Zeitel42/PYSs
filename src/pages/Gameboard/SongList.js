@@ -6,7 +6,7 @@ import { BsPlusCircle } from "react-icons/bs";
 import SongListModal from "./SongListModal";
 
 let id = 0;
-const SongList = ({ items, userChoice, setUserChoice }) => {
+const SongList = ({ items, setUserChoice }) => {
   const handleShow = () => {
     setIsOpen(true);
   };
@@ -17,6 +17,7 @@ const SongList = ({ items, userChoice, setUserChoice }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [uniqueSong, setUniqueSong] = useState([]);
+
   // variables
   let songTitles = [];
 
@@ -39,7 +40,7 @@ const SongList = ({ items, userChoice, setUserChoice }) => {
       uniqueSong.sort();
     });
   });
-  //   console.log(uniqueSong.length);
+  console.log(uniqueSong.length);
 
   return (
     <div>
@@ -51,6 +52,7 @@ const SongList = ({ items, userChoice, setUserChoice }) => {
         setIsOpen={setIsOpen}
         handleClose={handleClose}
         uniqueSong={uniqueSong}
+        setUserChoice={setUserChoice}
       />
     </div>
   );

@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const SetSong = ({ userChoice }) => {
+const Song = ({ userChoice }) => {
   const [song, setSong] = useState("Choose a song");
 
   const getSong = (value) => {
@@ -20,11 +20,11 @@ const SetSong = ({ userChoice }) => {
             <p>{song}</p>
           </Col>
           <Col>
-            <SongList userChoice={getSong} />
+            <SongList />
           </Col>
         </Row>
       </Container>
     </div>
   );
 };
-export default SetSong;
+export default Song;
