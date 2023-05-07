@@ -1,5 +1,5 @@
 // The gameboard will contain the searchable modal where the user will select songs to build each set.
-import SongList from "./SongList";
+// import SongList from "./SongList";
 // import SetOne from "./SetOne/SetOneIndex";
 import React, { useState, useEffect } from "react";
 import Song from "./Song";
@@ -41,16 +41,20 @@ const Gameboard = () => {
       }
     })();
   }, []);
-  console.log(userChoice);
+  //   console.log(userChoice);
   return (
     <div className="Gameboard">
       <h1>Place Your Sets</h1>
-      <SongList
+      {/* <SongList
+        items={items}
+        userChoice={userChoice}
+        setUserChoice={setUserChoice}
+      /> */}
+      <Song
         items={items}
         userChoice={userChoice}
         setUserChoice={setUserChoice}
       />
-      <Song userChoice={userChoice} />
     </div>
   );
 };

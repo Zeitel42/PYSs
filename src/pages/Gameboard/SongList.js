@@ -4,7 +4,9 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { BsPlusCircle } from "react-icons/bs";
 import SongListModal from "./SongListModal";
-let id = 0;
+
+// global variables
+
 const SongList = ({ items, userChoice, setUserChoice }) => {
   const handleShow = () => {
     setIsOpen(true);
@@ -39,7 +41,7 @@ const SongList = ({ items, userChoice, setUserChoice }) => {
       uniqueSong.sort();
     });
   });
-  console.log(uniqueSong.length, userChoice);
+  console.log(uniqueSong.length);
 
   return (
     <div>
